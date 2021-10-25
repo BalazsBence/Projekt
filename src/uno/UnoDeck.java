@@ -1,6 +1,7 @@
 package uno;
 
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
 
 
 public class UnoDeck 
@@ -48,6 +49,12 @@ public class UnoDeck
         public boolean isEmpty() 
             {
                 return CardsInDeck == 0;
+            }
+        
+        public void replaceDeckWith(ArrayList<UnoCard> cards) 
+            {
+                this.cards = cards.toArray(new UnoCard[cards.size()]);
+                this.CardsInDeck = this.cards.length;
             }
 
         public UnoCard drawCard() throws IllegalArgumentException 
