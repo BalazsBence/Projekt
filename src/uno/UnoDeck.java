@@ -2,6 +2,7 @@ package uno;
 
 import javax.swing.ImageIcon;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class UnoDeck 
@@ -64,6 +65,21 @@ public class UnoDeck
                         throw new IllegalArgumentException("Cannot draw a card since there are no cards in the deck");
                     }
                     return cards[--CardsInDeck];
+            }
+
+        public void shuffle() 
+            {
+                int n = cards.length;
+                Random random = new Random();
+          
+                for (int i = 0; i < cards.length; i++) 
+                    {
+                        int randomValue = i + random.nextInt(n - i);
+                        UnoCard randomCard = cards[randomValue];
+                        cards[randomValue] = cards[i];
+                        cards[i] = randomCard;
+                    }
+          
             }
           
         public ImageIcon drawCardImage() throws IllegalArgumentException 
