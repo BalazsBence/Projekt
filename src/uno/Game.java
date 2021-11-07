@@ -3,6 +3,8 @@ package uno;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -71,5 +73,64 @@ public class Game {
         }
 
         stockpile.add(card);
+    }
+
+    public UnoCard GetTopCard() {
+        return new UnoCard(validColor, validValue);
+    }
+
+    public ImageIcon getTopCardImage() {
+        return new ImageIcon(validColor + "_" + validValue + ".png");
+    }
+
+    public boolean isGameOver() {
+        for (String player : this.playerIds) {
+            if (hasEmptyHand(player)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getCurrentPlayer() {
+        return this.playerIds[this.currentPlayer];
+    }
+
+    public String getPreviousPlayer(int i) {
+        int index = this.currentPlayer - i;
+        if (index == -1) {
+            index = playerIds.length - 1;
+        }
+        return this.playerIds[index];
+    }
+
+    public String[] getPlayers() {
+        return playerIds;
+    }
+
+    public ArrayList<UnoCard> getPlayerHand(String pid) {
+        int index = Arrays.asList(playerIds).indexOf(pid);
+        return playerHand.get(index);
+    }
+
+    public int getPlayerHandSize(String pid) {
+        return getPlayerHand(pid).size();
+    }
+
+    public UnoCard getPlayerCard(String pid, int choice) {
+        ArrayList<UnoCard> hand = getPlayerHand(pid);
+        return hand.get(choice);
+    }
+
+    public boolean hasEmptyHand(String pid) {
+        return getPlayerHand(pid).isEmpty();
+    }
+
+    public boolean validCardPlay(UnoCard card) {
+        return card.getColor() == validColor || card.getValue() == validValue;
+    }
+
+    public void setCardColor(UnoCard.Color color) {
+        validColor = color;
     }
 }
