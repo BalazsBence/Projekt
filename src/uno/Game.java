@@ -180,7 +180,7 @@ public class Game {
                     throw new InvalidColorSubmissionException("Invalid player move, expected color: " + validColor + "but got color: " + card.getColor(), card.getColor(), validColor);
                 }
 
-                else if (card.getValue != validValue) {
+                else if (card.getValue() != validValue) {
                     JLabel message2 = new JLabel("Invalid player move, expected value: " + validValue + "but got color: " + card.getValue());
                     message2.setFont(new Font("Arial", Font.BOLD, 48));
                     JOptionPane.showMessageDialog(null, message2);
