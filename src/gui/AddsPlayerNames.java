@@ -1,5 +1,5 @@
 package gui;
 
-public class AddsPlayerNames {
+public class AddsPlayerNames extends javax.swing.JFrame {
     
 }
