@@ -83,6 +83,10 @@ public class Game {
         return new ImageIcon(validColor + "_" + validValue + ".png");
     }
 
+    public boolean hasEmptyHand(String pid) {
+        return getPlayerHand(pid).isEmpty();
+    }
+
     public boolean isGameOver() {
         for (String player : this.playerIds) {
             if (hasEmptyHand(player)) {
@@ -122,10 +126,6 @@ public class Game {
         return hand.get(choice);
     }
 
-    public boolean hasEmptyHand(String pid) {
-        return getPlayerHand(pid).isEmpty();
-    }
-
     public boolean validCardPlay(UnoCard card) {
         return card.getColor() == validColor || card.getValue() == validValue;
     }
@@ -145,6 +145,7 @@ public class Game {
         }
 
         getPlayerHand(pid).add(deck.drawCard());
+        
         if (gameDirection == false) {
             currentPlayer = (currentPlayer + 1) % playerIds.length;
         }
@@ -220,6 +221,8 @@ public class Game {
                 getPlayerHand(pid).add(deck.drawCard());
                 getPlayerHand(pid).add(deck.drawCard());
                 JLabel message2 = new JLabel(pid + " drew 2 cards!");
+                message2.setFont(new Font("Arial", Font.BOLD, 48));
+                JOptionPane.showMessageDialog(null, message2);
             }
 
             if (card.getValue() == UnoCard.Value.Wild_Four) {
