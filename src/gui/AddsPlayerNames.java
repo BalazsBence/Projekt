@@ -209,6 +209,11 @@ public class AddsPlayerNames extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, message);
                 pidTextBox.setText("");
             }
+
+            else{
+                this.dispose();
+                new GameStage(playerIDs).setVisible(true);
+            }
         }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
