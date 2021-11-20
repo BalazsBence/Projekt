@@ -39,7 +39,7 @@ public class GameStage extends javax.swing.JFrame
         populateArrayList();
         game.start(game);
         setPidName();
-        topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\bbben\\OneDrive\\Desktop\\Images\\PNGs\\small" + game.getTopCardImage()));
+        topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\bbben\\OneDrive\\Desktop\\Images\\PNGs\\small\\" + game.getTopCardImage()));
         setButtonIcons();
     }
    
@@ -48,7 +48,7 @@ public class GameStage extends javax.swing.JFrame
         String[] cardNames = listString.split(",");
         cardIds = new ArrayList<>(Arrays.asList(cardNames));
         for (int i = 0; i < cardIds.size(); i++) {
-            cardButtons.get(i).setIcon(new javax.swing.ImageIcon("C:\\Users\\bbben\\OneDrive\\Desktop\\Images\\PNGs\\small" + cardIds.get(i) + ".png"));
+            cardButtons.get(i).setIcon(new javax.swing.ImageIcon("C:\\Users\\bbben\\OneDrive\\Desktop\\Images\\PNGs\\small\\" + cardIds.get(i) + ".png"));
         }
        
         for (int i = cardIds.size(); i < cardButtons.size(); i++) {

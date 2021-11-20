@@ -135,7 +135,7 @@ public class Game {
 
     public void checkPlayerTurn(String pid) throws InvalidPlayerTurnException {
         if (this.playerIds[this.currentPlayer] != pid) {
-            throw new InvalidPlayerTurnException("it ia not " + pid + "'s trun", pid);
+            throw new InvalidPlayerTurnException(" it is not " + pid + "'s trun", pid);
         }
     }
 
@@ -178,24 +178,24 @@ public class Game {
                 }
 
                 if (card.getColor() != validColor) {
-                    JLabel message = new JLabel("Invalid player move, expected color: " + validColor + "but got color: " + card.getColor());
+                    JLabel message = new JLabel("Invalid player move, expected color: " + validColor + " but got color: " + card.getColor());
                     message.setFont(new Font("Arial", Font.BOLD, 48));
                     JOptionPane.showMessageDialog(null, message);
-                    throw new InvalidColorSubmissionException("Invalid player move, expected color: " + validColor + "but got color: " + card.getColor(), card.getColor(), validColor);
+                    throw new InvalidColorSubmissionException("Invalid player move, expected color: " + validColor + " but got color: " + card.getColor(), card.getColor(), validColor);
                 }
 
                 else if (card.getValue() != validValue) {
-                    JLabel message2 = new JLabel("Invalid player move, expected value: " + validValue + "but got color: " + card.getValue());
+                    JLabel message2 = new JLabel("Invalid player move, expected value: " + validValue + " but got color: " + card.getValue());
                     message2.setFont(new Font("Arial", Font.BOLD, 48));
                     JOptionPane.showMessageDialog(null, message2);
-                    throw new InvalidValueSubmissionException("Invalid player move, expected value: " + validValue + "but got color: " + card.getValue(), card.getValue(), validValue);
+                    throw new InvalidValueSubmissionException("Invalid player move, expected value: " + validValue + " but got color: " + card.getValue(), card.getValue(), validValue);
                 }
             }
 
             pHand.remove(card);
 
             if (hasEmptyHand(this.playerIds[currentPlayer])) {
-                JLabel message = new JLabel(this.playerIds[currentPlayer] + "has won the game! Thank you for playing!");
+                JLabel message = new JLabel(this.playerIds[currentPlayer] + " has won the game! Thank you for playing!");
                     message.setFont(new Font("Arial", Font.BOLD, 48));
                     JOptionPane.showMessageDialog(null, message);
                     System.exit(0);
