@@ -13,6 +13,7 @@ public class UnoDeck
         public UnoDeck()
             {
                 cards = new UnoCard[108];
+                    reset();
             }
         
         public void reset ()

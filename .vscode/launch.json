@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PopUp",
+            "request": "launch",
+            "mainClass": "gui.PopUp",
+            "projectName": "Uno_775187bd"
+        },
+        {
+            "type": "java",
             "name": "Launch GameStage",
             "request": "launch",
             "mainClass": "gui.GameStage",

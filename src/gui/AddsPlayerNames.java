@@ -7,8 +7,6 @@ package gui;
 
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.jar.Attributes.Name;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -209,11 +207,6 @@ public class AddsPlayerNames extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, message);
                 pidTextBox.setText("");
             }
-
-            else{
-                this.dispose();
-                new GameStage(playerIDs).setVisible(true);
-            }
         }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
@@ -222,6 +215,11 @@ public class AddsPlayerNames extends javax.swing.JFrame {
             JLabel message = new JLabel("Theremust be at least 2 players!");
             message.setFont(new Font("Arial", Font.BOLD, 48));
             JOptionPane.showMessageDialog(null, message);
+        }
+
+        else{
+            this.dispose();
+            new GameStage(playerIDs).setVisible(true);
         }
     }//GEN-LAST:event_DoneButtonActionPerformed
 

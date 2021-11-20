@@ -2,7 +2,7 @@ package uno;
 
 public class UnoCard 
     {
-        enum Color
+        public enum Color
         {
             Red, Blue, Green, Yellow, Wild;
 
@@ -13,7 +13,7 @@ public class UnoCard
                 }
         }
 
-        enum Value
+        public enum Value
             {
                 Zero, One, Two, Three, Four, Five, Six, Seven, Nine, Draw2, Skip, Reverse, Wild, Wild_Four;
 
