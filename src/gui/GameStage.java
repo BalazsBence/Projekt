@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Rodas
+ * @author bbben
  */
 public class GameStage extends javax.swing.JFrame
 {
